@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://assets/textures/stars_sprites/stars_far.png" type="Texture" id=1]
+[ext_resource path="res://assets/scripts/stars_moving.gd" type="Script" id=2]
+[ext_resource path="res://assets/textures/stars_sprites/stars_close.png" type="Texture" id=3]
+
+[node name="star_moving" type="Node"]
+
+[node name="stars_far" type="Node2D" parent="."]
+
+[node name="star_1" type="Sprite" parent="stars_far"]
+
+transform/pos = Vector2( -359, 310 )
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+velocity = Vector2( 50, 0 )
+
+[node name="star_2" type="Sprite" parent="stars_far"]
+
+transform/pos = Vector2( 360, 310 )
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+velocity = Vector2( 50, 0 )
+
+[node name="star_3" type="Sprite" parent="stars_far"]
+
+transform/pos = Vector2( 980, 310 )
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+velocity = Vector2( 50, 0 )
+
+[node name="stars_close" type="Node2D" parent="."]
+
+[node name="star_1" type="Sprite" parent="stars_close"]
+
+transform/pos = Vector2( -359, 310 )
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+script/script = ExtResource( 2 )
+velocity = Vector2( 50, 0 )
+
+[node name="star_2" type="Sprite" parent="stars_close"]
+
+transform/pos = Vector2( 360, 310 )
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+script/script = ExtResource( 2 )
+velocity = Vector2( 50, 0 )
+
+[node name="star_3" type="Sprite" parent="stars_close"]
+
+transform/pos = Vector2( 980, 310 )
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+script/script = ExtResource( 2 )
+velocity = Vector2( 50, 0 )
+
+

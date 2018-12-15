@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://assets/scripts/sounds.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/explosion.wav" type="Sample" id=2]
+[ext_resource path="res://assets/sounds/hit_enemy.wav" type="Sample" id=3]
+[ext_resource path="res://assets/sounds/hit_ship.wav" type="Sample" id=4]
+[ext_resource path="res://assets/sounds/laser_enemy.wav" type="Sample" id=5]
+[ext_resource path="res://assets/sounds/laser_ship.wav" type="Sample" id=6]
+[ext_resource path="res://assets/sounds/music.ogg" type="AudioStream" id=7]
+
+[sub_resource type="SampleLibrary" id=2]
+
+samples/explosion = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/hit_enemy = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/hit_ship = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/laser_enemy = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/laser_ship = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+
+[node name="sounds" type="Node"]
+
+script/script = ExtResource( 1 )
+
+[node name="sample_player" type="SamplePlayer" parent="."]
+
+config/polyphony = 15
+config/samples = SubResource( 2 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="stream_player" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 7 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+
